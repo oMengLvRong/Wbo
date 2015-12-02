@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v7l-gW-Bgo">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--新浪微博-->
+        <scene sceneID="g7g-OW-ULS">
+            <objects>
+                <viewController id="YFz-Md-fZ7" customClass="OauthViewController" customModule="Wbo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k8J-Ds-7cB"/>
+                        <viewControllerLayoutGuide type="bottom" id="YHp-NI-p2x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tYJ-Gs-yZj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nkj-Nx-C8S">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YFz-Md-fZ7" id="dXd-7l-ax1"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nkj-Nx-C8S" firstAttribute="leading" secondItem="tYJ-Gs-yZj" secondAttribute="leading" id="NDZ-8x-L1R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nkj-Nx-C8S" secondAttribute="trailing" id="fC7-Ah-GcS"/>
+                            <constraint firstItem="Nkj-Nx-C8S" firstAttribute="leading" secondItem="tYJ-Gs-yZj" secondAttribute="leadingMargin" id="k9m-3n-QQQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Nkj-Nx-C8S" secondAttribute="trailing" id="m4N-SR-1GP"/>
+                            <constraint firstItem="Nkj-Nx-C8S" firstAttribute="top" secondItem="k8J-Ds-7cB" secondAttribute="bottom" id="sEQ-Ws-2Sf"/>
+                            <constraint firstItem="YHp-NI-p2x" firstAttribute="top" secondItem="Nkj-Nx-C8S" secondAttribute="bottom" id="vwY-1m-NfI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fC7-Ah-GcS"/>
+                                <exclude reference="k9m-3n-QQQ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="新浪微博" id="N8S-Vc-ANJ">
+                        <barButtonItem key="rightBarButtonItem" title="关闭" id="3mq-Km-aKp">
+                            <color key="tintColor" red="1" green="0.53621665149999997" blue="0.2511760717" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="close:" destination="YFz-Md-fZ7" id="5El-DH-4ne"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="Nkj-Nx-C8S" id="oma-36-m1I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kst-Kr-HoY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1659" y="224"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="62E-Fg-oum">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v7l-gW-Bgo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HyJ-LB-ohB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YFz-Md-fZ7" kind="relationship" relationship="rootViewController" id="nBu-TK-tdi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l3H-6H-Ioh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="847" y="224"/>
+        </scene>
+    </scenes>
+</document>
